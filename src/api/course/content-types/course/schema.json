@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courseName": {
+      "type": "string"
+    },
+    "colleges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::college.college",
+      "mappedBy": "courses"
+    }
+  }
+}

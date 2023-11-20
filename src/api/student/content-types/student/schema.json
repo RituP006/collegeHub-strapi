@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "batchYear": {
+      "type": "integer",
+      "max": 2023,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "college": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::college.college",
+      "inversedBy": "students"
+    },
+    "skills": {
+      "type": "text"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
+    }
+  }
+}
